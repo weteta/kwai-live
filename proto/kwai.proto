@@ -1,0 +1,245 @@
+syntax = "proto3";
+package Kwai;
+
+message SCWebFeedPush {
+	int64 status = 1;
+	int64 type2 = 2;
+	message Params {
+		repeated ChatMessage chatMessage = 1;
+		repeated ChatMessageLike chatMessageLike = 2;
+		repeated ChatMessageGift chatMessageGift = 4;
+		repeated ChatMessageShare chatMessageShare = 9;
+		int64 status2 = 5;
+		int64 type3 = 6;
+		string status3 = 11;
+		string status4 = 12;
+		int64 myuser = 25;
+		repeated ChatMessage chatMessageJoin = 28;
+		int64 style = 45;
+		string style2 = 46;
+		int64 style3 = 47;
+	}
+	Params params = 3;
+	string liveStreamId = 7;
+}
+
+message ChatMessage {
+	string gaid = 1;
+	message Params {
+		int64 idUser = 1;
+		string name = 2;
+		string sex = 3;
+		UserImage image = 5;
+		int64 numberT1 = 7;
+		string imgTemp = 9;
+		EmptyString empty = 13;
+		string region = 14;
+		string lang = 15;
+	}
+	Params params = 2;
+	int64 time1 = 3;
+	string message1 = 4;
+	int64 time2 = 5;
+	string message2 = 7;
+	string livepop = 13;
+}
+
+message ChatMessageLike {
+	string gaid = 1;
+	message Params {
+		int64 idUser = 1;
+		string name = 2;
+		string sex = 3;
+		UserImage image = 5;
+		int64 numberT1 = 7;
+		EmptyString empty = 13;
+		string region = 14;
+		string lang = 15;
+	}
+	Params params = 2;
+	int64 time1 = 3;
+	int64 time2 = 4;
+	string message2 = 6;
+}
+
+message ChatMessageGift {
+	string gaid = 1;
+	message Params {
+		int64 idUser = 1;
+		string name = 2;
+		string sex = 3;
+		UserImage image = 5;
+		int64 numberT1 = 7;
+		string avatartemp = 9;
+		EmptyString empty = 13;
+		string region = 14;
+		string lang = 15;
+	}
+	Params params = 2;
+	int64 time1 = 3;
+	int64 giftId = 4;
+	int64 time3 = 5;
+	string message1 = 6;
+	int64 repeatCount = 7;
+	int64 repeatCount2 = 8;
+	int64 time6 = 10;
+	int64 time7 = 11;
+	string message2 = 23;
+	string message3 = 24;
+}
+
+message ChatMessageShare {
+	string gaid = 1;
+	message Params {
+		int64 idUser = 1;
+		string name = 2;
+		string sex = 3;
+		int64 numberT1 = 7;
+	}
+	Params params = 2;
+	int64 time1 = 3;
+	string message1 = 4;
+	int64 time2 = 5;
+	int64 time3 = 7;
+}
+
+message UserImage {
+	string image = 2;
+}
+
+message EmptyString {
+	string emptyString1 = 1;
+	string emptyString2 = 3;
+	string emptyString3 = 4;
+	string emptyString4 = 5;
+	string emptyString5 = 11;
+}
+
+message Start {
+	int64 status = 1;
+	int64 type2 = 2;
+	message Params {
+		string liveStreamId = 1;
+		int64 roomId = 3;
+		int64 room = 10;
+		string deviceID = 11;
+		string language = 12;
+		string version = 13;
+		double integer1 = 14;
+		double integer2 = 15;
+		string wifi = 16;
+	}
+	Params params = 3;
+}
+
+message EnterRoom {
+    int64 status = 1;
+    int64 type2 = 2;
+	message Params {
+		string token = 1;
+		int64 number1 = 2;
+		string phone = 3;
+		string liveStreamId = 4;
+		int64 number0 = 6;
+		int64 number2 = 7;
+		string locale = 8;
+		string version = 9;
+		string ntp = 10;
+		string wifi = 11;
+		int64 number3 = 12;
+		string expTag = 13;
+		string attach = 14;
+		int64 number4 = 15;
+		string token2 = 16;
+		string plat = 17;
+		string typePhone = 18;
+		int64 number5 = 19;
+		string nop = 20;
+		string gift = 21;
+	}
+	Params params = 3;
+}
+
+message HeartbeatClient {
+	int64 status = 1;
+    int64 type2 = 2;
+	message Params {
+		int64 timestamp = 1;
+		string liveStreamId = 2;
+	}
+	Params params = 3;
+}
+
+message CSWebEnterRoom {
+	int64 status = 1;
+    int64 type2 = 2;
+	message Params {
+		int64 timestamp = 1;
+	}
+	Params params = 3;
+	string liveStreamId = 7;
+}
+
+message SCFollowComment {
+    int64 status = 1;
+    int64 type2 = 2;
+	message Params {
+		FollowComment followComment = 1;
+	}
+	Params params = 3;
+	string varint3 = 7;
+}
+
+message FollowComment {
+	string type = 1;
+	message Params {
+		FollowComment2 followComment2 = 1;
+        map<int32, int64> preferData = 2;
+		string temp0 = 4;
+		string temp1 = 5;
+	}
+	repeated Params params = 2;
+}
+
+message SCRtcMatch {
+	message Params {
+		int64 idUser = 1;
+		string name = 2;
+		string sex = 3;
+		UserImage image = 5;
+		int64 timex2 = 7;
+		EmptyString empty = 13;
+	}
+	Params params = 1;
+	int64 time0 = 2;
+	int64 time1 = 3;
+	int64 time2 = 7;
+}
+
+message FollowComment2 {
+	int64 idUser = 1;
+	string name = 2;
+	string sex = 3;
+	UserImage image = 5;
+	int64 timex2 = 7;
+	EmptyString empty = 13;
+}
+
+message SocketMessage {
+	int64 status = 1;
+	int64 type = 2;
+}
+
+message FirstMessage {
+	int64 status = 1;
+	int64 type = 2;
+	message Params {
+		int64 time1 = 2;
+		int64 time2 = 3;
+		int64 time3 = 4;
+		int64 time4 = 7;
+		int64 time5 = 8;
+	}
+	Params params = 3;
+	string liveStreamId = 7;
+}
