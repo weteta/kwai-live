@@ -1,2 +1,8 @@
-# kwai-live
-This library connects to kwai live stream, it collects likes, comments, gifts and shares.
+Kwai Live
+
+```javascript
+const KwaiClient = require('./kwai');
+
+let kwaiUsername = "username"
+let connection = new KwaiClient(kwaiUsername)
+```
